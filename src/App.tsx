@@ -489,7 +489,9 @@ export default function App() {
                   {overlayActive ? 'Stop Overlay' : 'Start Overlay'}
                 </button>
               </div>
-              <OverlayWysiwyg activeProfile={activeProfile} onUpdateProfile={handleUpdateProfile} onLogMessage={handleLogMessage} activeKeys={activeKeys} activeAxes={activeAxes} />
+              <div className="h-[70vh] min-h-[420px] flex flex-col">
+  <OverlayWysiwyg activeProfile={activeProfile} onUpdateProfile={handleUpdateProfile} onLogMessage={handleLogMessage} activeKeys={activeKeys} activeAxes={activeAxes} />
+</div>
             </>
           )}
 
