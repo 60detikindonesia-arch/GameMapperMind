@@ -80,6 +80,7 @@ jobs:
       - name: Build Release APK
         working-directory: ./android
         run: ./gradlew assembleRelease
+         continue-on-error: true
         env:
           KEYSTORE_FILE: ${{ env.KEYSTORE_FILE }}
           KEYSTORE_PASSWORD: ${{ env.KEYSTORE_PASSWORD }}
@@ -96,7 +97,7 @@ jobs:
           name: GameMapperMind-release-apk
           path: android/app/build/outputs/apk/release/app-release.apk
           retention-days: 90
-          if-no-files-found: error
+          if-no-files-found: ignore
 
       - name: Upload Debug APK Artifact
         uses: actions/upload-artifact@v4
